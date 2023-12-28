@@ -1,38 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ActivityIndicator, ScrollView } from 'react-native';
+import { View, Text, ActivityIndicator, ScrollView, SafeAreaView } from 'react-native';
 import OrderItemList from '../components/orderItemList/OrderItemList';
 import Controller from '../controller/Controller';
 import { StatusBar } from 'expo-status-bar';
 
-const SummaryScreen = () => {
+function SummaryScreen () {
 
-  const Render = (data) => {
-    return (
+  function Render(data){
+    return(
       <>
-        <Text>{data.Location}</Text>
-        <Text>{data.Description}</Text>
-        <Text>{data.CreatedBy}</Text>
         <Text>{data.IdOrder}</Text>
+        <Text>{data.Description}</Text>
+        <Text>{data.Location}</Text>
+
       </>
-    );
+    )
   }
-  
 
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState([null]);
 
-  Controller.getAllOrders('http://192.168.100.105:8000/api/list-orders/')
-    .then((response) => {
-      JSON.parse(response)})
-        .then((responseJson) =>{
-          console.log(responseJson)
-        })
-  
+  useEffect(() => {
+    
+    Controller.getAllOrders('http://192.168.100.105:8000/api/list-orders/')
+    .then((response) => JSON.parse(response))
+      .then((responseJson) => {
+        setOrders(responseJson);
+        console.log(responseJson);
+      })
+
+  }, [])
+
+
   return (
-    <View>
+    <SafeAreaView>
       <ScrollView>
         {orders.map(Render)}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );  
 };
 
