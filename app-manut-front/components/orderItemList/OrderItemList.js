@@ -3,14 +3,14 @@ import { View, Text } from 'react-native';
 
 
 const OrderItemList = (props) => {
+    console.log(props);
+
     return (
         <View>
-            <Text>{props.texto}</Text>
-            <Text>{props.nome}</Text>
-            <Text>{props.sobrenome}</Text>
-        </View>
-                    
+            <Text>TESTE</Text>
+        </View>                 
     );
 }
+
 
 export default OrderItemList;
