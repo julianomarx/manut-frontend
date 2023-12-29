@@ -6,35 +6,23 @@ import { StatusBar } from 'expo-status-bar';
 
 function SummaryScreen () {
 
-  function Render(data){
-    return(
-      <>
-        <Text>{data.IdOrder}</Text>
-        <Text>{data.Description}</Text>
-        <Text>{data.Location}</Text>
-
-      </>
-    )
-  }
-
-  const [orders, setOrders] = useState([null]);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     
-    Controller.getAllOrders('http://192.168.100.105:8000/api/list-orders/')
-    .then((response) => JSON.parse(response))
+   /* Controller.getAllOrders('http://192.168.100.105:8000/api/list-orders/')
+    .then((response) => response)
       .then((responseJson) => {
         setOrders(responseJson);
         console.log(responseJson);
-      })
+      })*/
 
   }, [])
-
 
   return (
     <SafeAreaView>
       <ScrollView>
-        {orders.map(Render)}
+       <Text>Summary</Text>
       </ScrollView>
     </SafeAreaView>
   );  
