@@ -20,7 +20,7 @@ function SummaryScreen () {
   }, [])
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
       <ScrollView>
        <Text>Summary</Text>
       </ScrollView>
