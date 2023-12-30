@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class Controller {
-    async getAllOrders(url) {
+    async getAllPendingOrders(url) {
         try {
             const response = await axios.get(url);
             return response.data;

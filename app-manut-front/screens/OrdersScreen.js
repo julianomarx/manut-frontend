@@ -10,7 +10,7 @@ function OrdersScreen () {
 
   useEffect(() => {
     
-    Controller.getAllOrders('http://192.168.100.105:8000/api/list-orders/')
+    Controller.getAllPendingOrders('http://192.168.100.105:8000/api/list-orders/')
     .then((response) => response)
       .then((responseJson) => {
         setOrders(responseJson);
@@ -20,7 +20,7 @@ function OrdersScreen () {
   }, [])
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#fff'}}>
       <ScrollView>
        {orders.map(OrderItemList)}
       </ScrollView>
@@ -28,4 +28,7 @@ function OrdersScreen () {
   );  
 };
 
+
+
 export default OrdersScreen;
+
