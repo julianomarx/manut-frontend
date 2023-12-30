@@ -1,9 +1,15 @@
 import axios from 'axios';
 
 class Controller {
+
     async getAllPendingOrders(url) {
+
+        const jsonData = {
+            Status: '1',
+        }
+
         try {
-            const response = await axios.get(url);
+            const response = await axios.get(url, jsonData);
             return response.data;
 
         }  catch(error) {   
