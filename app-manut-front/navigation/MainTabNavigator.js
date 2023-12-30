@@ -11,7 +11,7 @@ const AppTab = createBottomTabNavigator();
 
 const MainTabNavigator = () => (
 
-  <AppTab.Navigator>
+  <AppTab.Navigator screenOptions={{tabBarActiveTintColor: '#2c53ff'}}>
 
     <AppTab.Screen
       name="Summary"

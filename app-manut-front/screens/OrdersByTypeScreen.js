@@ -1,11 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
+import FloatingButton from '../components/floatingButton/FloatingButton';
 
 const OrdersByTypeScreen = () => (
-  <View>
+  <>
+  <SafeAreaView style={{backgroundColor:'#fff'}}>
     <Text>Orders by Type Screen</Text>
-    {/* Conteúdo da tela */}
-  </View>
+    
+  </SafeAreaView>
+
+
+
+  <FloatingButton />
+
+  <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>
+  </>
 );
 
 export default OrdersByTypeScreen;

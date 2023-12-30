@@ -1,12 +1,16 @@
 import React from 'react';
 import AppNavigator from './navigation/AppNavigator';
 import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
+import FloatingButton from './components/floatingButton/FloatingButton';
 
 
  
 export default function App() {
   return (
-      <AppNavigator />
+
+        <AppNavigator />
+
+      
   )
 }
 

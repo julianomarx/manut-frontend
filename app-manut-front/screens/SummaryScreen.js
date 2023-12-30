@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator, ScrollView, SafeAreaView } from 'react-n
 import OrderItemList from '../components/orderItemList/OrderItemList';
 import Controller from '../controller/Controller';
 import { StatusBar } from 'expo-status-bar';
+import FloatingButton from '../components/floatingButton/FloatingButton';
 
 function SummaryScreen () {
 
@@ -20,11 +21,18 @@ function SummaryScreen () {
   }, [])
 
   return (
-    <SafeAreaView style={{backgroundColor: '#fff'}}>
-      <ScrollView>
-       <Text>Summary</Text>
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={{backgroundColor: '#fff'}}>
+        <ScrollView>
+        <Text>Summary</Text>
+
+        </ScrollView>
+
+      </SafeAreaView>
+      <FloatingButton />
+
+      <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>
+    </>
   );  
 };
 
