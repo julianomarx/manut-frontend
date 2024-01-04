@@ -4,8 +4,9 @@ import AuthNavigator from './AuthNavigator';
 import MainTabNavigator from './MainTabNavigator';
 import NavigationService from './NavigationService';
 
+
 const AppNavigator = () => {
-  const userIsAuthenticated = true; // Exemplo: verificar se o usuário está autenticado
+  const userIsAuthenticated = true; 
 
   return (
     <NavigationContainer

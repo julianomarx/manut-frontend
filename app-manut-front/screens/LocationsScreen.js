@@ -5,12 +5,10 @@ import FloatingButton from '../components/floatingButton/FloatingButton';
 const LocationsScreen = () => (
 
   <>
-    <SafeAreaView style={{backgroundColor: '#fff'}}>
+    <SafeAreaView>
       <Text>Locations Screen</Text>
-      
-      
     </SafeAreaView>
-    <FloatingButton />
+    <FloatingButton path="CreateOrder" />
 
     <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>
   </>

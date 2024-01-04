@@ -22,14 +22,14 @@ function SummaryScreen () {
 
   return (
     <>
-      <SafeAreaView style={{backgroundColor: '#fff'}}>
+      <SafeAreaView>
         <ScrollView>
         <Text>Summary</Text>
 
         </ScrollView>
 
       </SafeAreaView>
-      <FloatingButton />
+      <FloatingButton></FloatingButton>
 
       <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>
     </>

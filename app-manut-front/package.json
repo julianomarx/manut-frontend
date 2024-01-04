@@ -16,10 +16,12 @@
     "expo": "^49.0.21",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-native": "0.72.6",
     "react-native-immersive": "^2.0.0",
     "react-native-immersive-bars": "^1.0.4",
-    "react-native-vector-icons": "^10.0.3"
+    "react-native-vector-icons": "^10.0.3",
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
