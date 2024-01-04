@@ -10,14 +10,7 @@ function SummaryScreen () {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    
-   /* Controller.getAllOrders('http://192.168.100.105:8000/api/list-orders/')
-    .then((response) => response)
-      .then((responseJson) => {
-        setOrders(responseJson);
-        console.log(responseJson);
-      })*/
-
+  
   }, [])
 
   return (
@@ -29,7 +22,6 @@ function SummaryScreen () {
         </ScrollView>
 
       </SafeAreaView>
-      <FloatingButton></FloatingButton>
 
       <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>
     </>

@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, Text, View } from "react-native";
 import FloatingButton from "../components/floatingButton/FloatingButton";
 
 const CreateOrderScreen = () => {
@@ -8,7 +8,7 @@ const CreateOrderScreen = () => {
             <SafeAreaView>
                 <Text>Hello</Text>
             </SafeAreaView>
-            <FloatingButton />
+            <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>
         </>
     )
 }

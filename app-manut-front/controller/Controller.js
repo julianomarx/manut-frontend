@@ -1,14 +1,17 @@
 import axios from 'axios';
+import API_REQUESTS from './ApiManager';
 
 class Controller {
 
-    async getAllPendingOrders(url) {
-        const jsonData = {
-            Status: 1,
+    async getAllPendingOrders() {
+        const queryParams = {
+            params: {
+                status: 1
+            }
         }
-
+ 
         try {
-            const response = await axios.get(url);
+            const response = await axios.get(API_REQUESTS.pendingOrders, queryParams);
             return response.data;
 
         }  catch(error) {   
