@@ -9,7 +9,7 @@ const OrdersScreen = () => {
 
   useEffect(() => {
     
-    Controller.getAllPendingOrders()
+    Controller.getOrders()
     .then((response) => response)
       .then((responseJson) => {
         setOrders(responseJson);
@@ -20,10 +20,11 @@ const OrdersScreen = () => {
   return (
     <>
       <SafeAreaView>
-      <ScrollView>
-       {orders.map(OrderItemList)} 
-      </ScrollView>
-      
+        <ScrollView>
+
+          {orders.map(OrderItemList)} 
+
+        </ScrollView>
       </SafeAreaView>
 
       <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></View>

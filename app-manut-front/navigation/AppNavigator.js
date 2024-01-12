@@ -15,20 +15,23 @@ const AppNavigator = () => {
       ref={navigatorRef => NavigationService.setTopLevelNavigator(navigatorRef)}
     >
       {userIsAuthenticated ? (
-        
 
-          <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}> 
+        <View style={{width: '100%', height: '100%', backgroundColor: '#fff'}}> 
 
-            <MainTabNavigator />
-            <FloatingButton />
-          </View>
+          <MainTabNavigator />
+
+          <FloatingButton />
+
+        </View>
           
-        
-
       ) : (
+
         <AuthNavigator />
+
       )}
+
     </NavigationContainer>
+    
   );
 };
 

@@ -3,7 +3,7 @@ import API_REQUESTS from './ApiManager';
 
 class Controller {
 
-    async getAllPendingOrders() {
+    async getOrders() {
         const queryParams = {
             params: {
                 status: 1
@@ -19,6 +19,10 @@ class Controller {
             throw error;
         }     
     } 
+
+
 }
+
+
 
 export default new Controller();
