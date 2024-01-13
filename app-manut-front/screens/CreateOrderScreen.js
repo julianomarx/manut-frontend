@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from "react";
-import {  View ,Text, TextInput, TouchableOpacity, Image, Platform, SafeAreaView } from "react-native";
+import axios from 'axios';
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants'; 
-import axios from "axios";
-import API_REQUESTS from "../controller/ApiManager";
-import { Picker } from "react-native-web";
-import RNPickerSelect from 'react-native-picker-select';
+import React, { useEffect, useState } from 'react';
+import { Image, SafeAreaView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-
+import CreateOrderForm from '../components/dropDownComponent/DropDown';
+import API_REQUESTS from '../controller/ApiManager';
 
 
 const CreateOrderScreen = () => {
 
     const [location, setLocation] = useState(0);
     const [order_type, setOrderType] = useState(0);
-    const [image_data, setImageData] = useState('hardcoded');
+    const [image_data, setImageData] = useState(null);
     const [description, setDescription] = useState('');
     const [created_by, setCreatedBy] = useState(0);
     const [status, setStatus] = useState(1);
@@ -69,7 +66,6 @@ const CreateOrderScreen = () => {
     const submitOrder = async () => {
 
         const formData = {
-            
                 location,
                 order_type,
                 image_data,
@@ -104,45 +100,31 @@ const CreateOrderScreen = () => {
                 
                 <View>
 
-                <RNPickerSelect
-                    onValueChange={(itemValue) => setLocation(itemValue)}
-                    items={[
-                        { label: 'Location 1', value: 1 },
-                        { label: 'Location 2', value: 2 },
-                        { label: 'Location 3', value: 3 },
-                    ]}
+                <CreateOrderForm />
+
+               
+
+                <TextInput 
+                    placeholder="Descrição"
+                    value={description}
+                    onChangeText={(text) => setDescription(text)}
                 />
 
-                <RNPickerSelect
-                    onValueChange={(itemValue) => setOrderType(itemValue)}
-                    items={[
-                        { label: 'Type 1', value: 1 },
-                        { label: 'Type 2', value: 2 },
-                        { label: 'Type 3', value: 3 },
-                    ]}
-                />
+                <TouchableOpacity onPress={() => pickImage('camera')}>
+                    <Text>Adicionar pela câmera</Text>
+                </TouchableOpacity>
 
-                    <TextInput 
-                        placeholder="Descrição"
-                        value={description}
-                        onChangeText={(text) => setDescription(text)}
-                    />
-
-                   <TouchableOpacity onPress={() => pickImage('camera')}>
-                        <Text>Adicionar pela câmera</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => pickImage('gallery')}>
-                        <Text>Adicionar pela galeria</Text>
-                    </TouchableOpacity>
+                <TouchableOpacity onPress={() => pickImage('gallery')}>
+                    <Text>Adicionar pela galeria</Text>
+                </TouchableOpacity>
 
 
-                    {/* verifica se imageData é verdadeiro para renderiza-lo */}
-                    {image_data && <Image source={{ uri: image_data }} style={{ width: 200, height: 200 }} />}
+                {/* verifica se imageData é verdadeiro para renderiza-lo */}
+                {image_data && <Image source={{ uri: image_data }} style={{ width: 200, height: 200 }} />}
 
-                    <TouchableOpacity onPress={submitOrder}>
-                        <Text>Enviar Ordem</Text>
-                    </TouchableOpacity>
+                <TouchableOpacity onPress={submitOrder}>
+                <Text>Enviar Ordem</Text>
+                </TouchableOpacity>
 
                 </View>
             
@@ -154,4 +136,4 @@ const CreateOrderScreen = () => {
     )
 }
 
-export default CreateOrderScreen;
+export default CreateOrderScreen;   
