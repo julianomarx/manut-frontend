@@ -13,6 +13,7 @@ const AppTab = createBottomTabNavigator();
 const OrderCreationStack = createNativeStackNavigator();
 
 export const OrderCreationNavigator = () => (
+  
   <OrderCreationStack.Navigator>
     <OrderCreationStack.Screen
       name="CreateOrder"
@@ -24,7 +25,6 @@ export const OrderCreationNavigator = () => (
 
 const MainTabNavigator = () => (  
 
- 
 <AppTab.Navigator screenOptions={{tabBarActiveTintColor: '#2c53ff'}}>
 
   <AppTab.Screen
