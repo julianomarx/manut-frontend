@@ -7,13 +7,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         bottom: '11%',
         right: 20,
-        backgroundColor: '#2c53ff',  // Cor do botão
+        backgroundColor: '#2c53ff',  
         borderRadius: 30, 
         width: 60,
-        height: 60,       // Borda arredondada para formar um círculo
+        height: 60,       
         padding: 15,
         elevation: 5,    
-        zIndex: 1,         // Sombra para dar uma aparência flutuante
+        zIndex: 1,       
     },
 
     buttonText: {

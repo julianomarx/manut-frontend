@@ -1,21 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { View, ScrollView, SafeAreaView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, ScrollView, View } from 'react-native';
+
 import OrderItemList from '../components/orderItemList/OrderItemList';
 import Controller from '../controller/Controller';
+import token from './LoginScreen';
+
 
 const OrdersScreen = () => {
 
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    
-    Controller.getOrders()
-    .then((response) => response)
-      .then((responseJson) => {
-        setOrders(responseJson);
-        console.log(responseJson);
+
+    token.then((result) => {
+
+      Controller.getPendingOrders(result.access_token)
+        .then((response) => response)
+          .then((responseJson) => {
+            setOrders(responseJson);
+            console.log(responseJson);
       })
+  
+    }
+  
+  )
+    
   }, [])
+
+ 
 
   return (
     <>
